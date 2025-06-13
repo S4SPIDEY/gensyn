@@ -41,7 +41,7 @@ source .venv/bin/activate
 
 ---
 
-## 🌐 Install Cloudflare Tunnel (Start This in another Tab/Screen) 
+## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
 
 ### 1. Download and Install 
 ```bash
