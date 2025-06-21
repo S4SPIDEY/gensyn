@@ -3,7 +3,7 @@
 
 ---
 
-## 📍 Used another guide, Remove those first. 
+## 📍 Remove Previous data. Take Back up of *.prem file if it's old. 
 
 ```
 sudo pkill screen
