@@ -16,9 +16,11 @@ sudo rm -rf rl-swarm
 curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/gistfile1.txt | bash
 ```
 ```
-curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/grpo-qwen-2.5-0.5b-deepseek-r1.yaml -o rl-swarm/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml && \
-curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/layout.tsx -o rl-swarm/modal-login/app/layout.tsx && \
-curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/page.tsx -o rl-swarm/modal-login/app/page.tsx
+cd rl-swarm
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
 ```
 
 ```
