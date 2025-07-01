@@ -6,7 +6,6 @@
 ## 📍 Remove Previous data. Take Back up of *.prem file if it's old. 
 
 ```
-sudo pkill screen
 sudo rm -rf rl-swarm
 ```
 
