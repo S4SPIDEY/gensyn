@@ -17,6 +17,10 @@ sudo apt update && sudo apt install -y yarn
 echo "🔍 Cloning RL-SWARM repo..."
 git clone https://github.com/gensyn-ai/rl-swarm.git
 cd rl-swarm
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
 
 echo "📦 Setting up Python virtual environment..."
 python3 -m venv .venv
