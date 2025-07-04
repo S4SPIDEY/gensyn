@@ -25,16 +25,9 @@ sudo rm -rf rl-swarm
 ```
 curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/gistfile1.txt | bash
 ```
-```
-cd rl-swarm
-git switch main
-git reset --hard
-git clean -fd
-git pull origin main
-```
 
 ```
-screen -S aimodel
+screen -S gen
 ```
 
 ```
@@ -47,6 +40,20 @@ cd rl-swarm
 ```
 ./run_rl_swarm.sh
 ```
+
+# Run This to update to latest
+```
+cd rl-swarm
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
+rm -rf .venv
+python3 -m venv .venv
+source .venv/bin/activate
+./run_rl_swarm.sh
+```
+
 
 ## Model Names
 
