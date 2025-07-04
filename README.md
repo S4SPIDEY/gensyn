@@ -17,6 +17,8 @@ cloudflared tunnel --url http://localhost:3000
 ## 📍 Remove Previous data. Take Back up of *.prem file if it's old. 
 
 ```
+cd ~
+cp rl-swarm/swarm.pem ~
 sudo rm -rf rl-swarm
 ```
 
@@ -48,10 +50,6 @@ git switch main
 git reset --hard
 git clean -fd
 git pull origin main
-rm -rf .venv
-python3 -m venv .venv
-source .venv/bin/activate
-./run_rl_swarm.sh
 ```
 
 
