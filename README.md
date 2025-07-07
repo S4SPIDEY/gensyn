@@ -14,7 +14,7 @@ cloudflared tunnel --url http://localhost:3000
 
 ---
 
-## 📍 Remove Previous data. Take Back up of *.prem file if it's old. 
+## 📍 Remove Previous data. Take Back up of swarm.pem file if it's old. 
 
 ```
 cd ~
