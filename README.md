@@ -29,20 +29,13 @@ cd rl-swarm
 ./run_rl_swarm.sh
 ```
 
-## Run This to update to latest
+## Run This to update to latest or you are getting terminated error 
 ```
 cd rl-swarm
 git switch main
 git reset --hard
 git clean -fd
 git pull origin main
-```
-## if getting terminate error before loging window
-```
-git fetch origin
-git reset --hard origin/main
-Then 
-git pull 
 ```
 
 ## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
