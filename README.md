@@ -1,19 +1,5 @@
 # Gensyn Node Guide
 
-## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
-
-### 1. Download and Install 
-```
-curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/install-firewall-cloudflared.sh | bash
-```
-
-### 2. Start Tunnel
-```
-cloudflared tunnel --url http://localhost:3000
-```
-
----
-
 ## 📍 Remove Previous data. Take Back up of swarm.pem file if it's old. 
 
 ```
@@ -43,7 +29,7 @@ cd rl-swarm
 ./run_rl_swarm.sh
 ```
 
-# Run This to update to latest
+## Run This to update to latest
 ```
 cd rl-swarm
 git switch main
@@ -51,6 +37,20 @@ git reset --hard
 git clean -fd
 git pull origin main
 ```
+
+## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
+
+### 1. Download and Install 
+```
+curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/install-firewall-cloudflared.sh | bash
+```
+
+### 2. Start Tunnel
+```
+cloudflared tunnel --url http://localhost:3000
+```
+
+---
 
 
 ## Model Names
