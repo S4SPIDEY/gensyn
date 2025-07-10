@@ -19,10 +19,8 @@ screen -S gen
 ```
 
 ```
-rm -rf .venv
-python3 -m venv .venv
-source .venv/bin/activate
-cd rl-swarm
+rm -rf .venv #optional 
+python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm 
 ```
 
 ```
