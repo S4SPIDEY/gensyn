@@ -35,12 +35,14 @@ git reset --hard
 git clean -fd
 git pull origin main
 ```
-###  Error self.run_game_round() - Loops through stages until end of round signal is received
+###  Error 'self.run_game_round()' OR 'global_step = self.step' OR 'rewards = torch.tensor(rewards)'
 ```
 sed -i 's/rewards = torch.tensor(rewards)/rewards = torch.tensor([[r, 0.0] if isinstance(r, (int, float)) else r for r in rewards])/g' ~/.venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
 ```
-
-
+### Error: 'Daemon failed to start in 15.0 seconds'
+```
+sed -i -E 's/startup_timeout: float =15/startup_timeout: float = 120/' ~/.venv/lib/python3.12/site-packages/hivemind/p2p/p2p_daemon.py
+```
 ## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
 
 ### 1. Download and Install 
