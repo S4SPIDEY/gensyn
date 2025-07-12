@@ -27,7 +27,7 @@ python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 ./run_rl_swarm.sh
 ```
 
-## Run This to update to latest or you are getting terminated error 
+## Getting terminated error / Update to Letest 
 ```
 cd rl-swarm
 git switch main
@@ -35,6 +35,11 @@ git reset --hard
 git clean -fd
 git pull origin main
 ```
+##  Error self.run_game_round()  # Loops through stages until end of round signal is received
+```
+sed -i 's/rewards = torch.tensor(rewards)/rewards = torch.tensor([[r, 0.0] if isinstance(r, (int, float)) else r for r in rewards])/g' ~/.venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
+```
+
 
 ## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
 
