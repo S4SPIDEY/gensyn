@@ -37,7 +37,8 @@ git pull origin main
 ```
 ###  Error 'self.run_game_round()' OR 'global_step = self.step' OR 'rewards = torch.tensor(rewards)'
 ```
-sed -i 's/rewards = torch.tensor(rewards)/rewards = torch.tensor([[r, 0.0] if isinstance(r, (int, float)) else r for r in rewards])/g' ~/.venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
+sed -i 's|rewards = torch.tensor(rewards)|rewards = torch.tensor([[r[0], 0.0] if isinstance(r, list) and len(r) == 1 else ([r, 0.0] if isinstance(r, (int, float)) else r) for r in rewards])|' ~/.venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
+
 ```
 ### Error: 'Daemon failed to start in 15.0 seconds'
 ```
