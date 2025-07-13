@@ -19,7 +19,6 @@ screen -S gen
 ```
 
 ```
-rm -rf .venv #optional 
 python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm 
 ```
 
@@ -29,11 +28,13 @@ python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 
 ### Getting terminated error / Update to Letest 
 ```
+rm -rf .venv #optional
 cd rl-swarm
 git switch main
 git reset --hard
 git clean -fd
 git pull origin main
+
 ```
 ###  Error 'self.run_game_round()' OR 'global_step = self.step' OR 'rewards = torch.tensor(rewards)'
 ```
@@ -54,7 +55,6 @@ sed -i '/# Concatenate prompt and completion/i\
                 completion_ids  = torch.nn.functional.pad(completion_ids,  (0, pad_comp),  value=self.processing_class.pad_token_id)\n\
                 completion_mask = torch.nn.functional.pad(completion_mask, (0, pad_comp),  value=0)\n\
         # --------------------------------------------------------------------' ~/.venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
-
 ```
 ### Error: 'Daemon failed to start in 15.0 seconds'
 ```
