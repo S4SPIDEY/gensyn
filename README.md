@@ -17,7 +17,9 @@ curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/gistf
 ```
 screen -S gen
 ```
-
+```
+#optional rm -rf .venv 
+```
 ```
 python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm 
 ```
