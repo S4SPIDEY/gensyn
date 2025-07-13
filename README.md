@@ -25,7 +25,6 @@ python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 ```
 ./run_rl_swarm.sh
 ```
-
 ### Getting terminated error / Update to Letest 
 ```
 rm -rf .venv #optional
@@ -34,7 +33,6 @@ git switch main
 git reset --hard
 git clean -fd
 git pull origin main
-
 ```
 ###  Error 'self.run_game_round()' OR 'global_step = self.step' OR 'rewards = torch.tensor(rewards)'
 ```
@@ -66,17 +64,11 @@ sed -i -E 's/startup_timeout: float =15/startup_timeout: float = 120/' ~/.venv/l
 ```
 curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/install-firewall-cloudflared.sh | bash
 ```
-
 ### 2. Start Tunnel
 ```
 cloudflared tunnel --url http://localhost:3000
 ```
-
----
-
-
 ## Model Names
-
 ```
 Gensyn/Qwen2.5-0.5B-Instruct
 ```
