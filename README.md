@@ -48,10 +48,10 @@ python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 ```bash
 rm -rf .venv      # Optional: reset virtual environment
 cd rl-swarm
+git fetch --all --tags
 git switch main
-git reset --hard
+git reset --hard origin/main
 git clean -fd
-git pull origin main
 ```
 
 ## 🌐 (VPS Users Only) – Enable Cloudflare Tunnel for Browser Access
