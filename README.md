@@ -1,52 +1,81 @@
-# Gensyn Node Guide
+# 🧠 Gensyn Node Guide
 
-## 📍 Remove Previous data. Take Back up of swarm.pem file if it's old. 
+> Quick setup for running your Gensyn node on local or VPS environment  
+> Includes startup, model selection, error handling & Cloudflare tunnel
 
-```
+---
+
+## 🔁 Clean Setup (Optional But Recommended)
+
+Before starting, **remove previous setup** and **backup your existing key** (`swarm.pem`):
+
+```bash
 cd ~
 cp rl-swarm/swarm.pem ~
 sudo rm -rf rl-swarm
 ```
 
-## 📦 New User Start From Here - Node Setup Commands
+---
 
-```
+## 🚀 One-Liner Setup for New Users
+
+```bash
 curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/gistfile1.txt | bash
 ```
 
-```
+> This script will install required packages, clone the repo, and prepare your system
+
+---
+
+## 🧾 Run the Node
+
+```bash
 screen -S gen
 ```
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 ```
-python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm 
-```
-```
+
+```bash
 ./run_rl_swarm.sh
 ```
-### Getting terminated error / Update to Letest 
-```
-rm -rf .venv #optional
+
+---
+
+## 🔄 Update to Latest (If Errors or Upgrade Required)
+
+```bash
+rm -rf .venv      # Optional: reset virtual environment
 cd rl-swarm
 git switch main
 git reset --hard
 git clean -fd
 git pull origin main
 ```
-### Error: 'Daemon failed to start in 15.0 seconds'
-```
-sed -i -E 's/startup_timeout: float =15/startup_timeout: float = 120/' ~/.venv/lib/python3.12/site-packages/hivemind/p2p/p2p_daemon.py
-```
-## 🌐 Only for VPS users Install Cloudflare Tunnel (Start This in another Tab/Screen) 
 
-### 1. Download and Install 
-```
+## 🌐 (VPS Users Only) – Enable Cloudflare Tunnel for Browser Access
+
+> Run this in a **new tab** or **screen session**
+
+### 1. Install Tunnel Script
+
+```bash
 curl -sL https://raw.githubusercontent.com/S4SPIDEY/gensyn/refs/heads/main/install-firewall-cloudflared.sh | bash
 ```
+
 ### 2. Start Tunnel
-```
+
+```bash
 cloudflared tunnel --url http://localhost:3000
 ```
-## Model Names
+
+---
+
+## 🧠 Supported Model Names
+
+Use one of these models when prompted:
+
 ```
 Gensyn/Qwen2.5-0.5B-Instruct
 ```
@@ -55,13 +84,18 @@ Qwen/Qwen3-0.6B
 ```
 ```
 nvidia/AceInstruct-1.5B
-```
-```
 dnotitia/Smoothie-Qwen3-1.7B
-```
-```
 Gensyn/Qwen2.5-1.5B-Instruct
 ```
 
+---
 
+## 📝 Notes
 
+- Use `screen -r gen` to reattach your screen session anytime.
+- You can reuse `swarm.pem` across reboots or reinstalls — just copy it back into your `rl-swarm` folder.
+- Need help? Ping the Gensyn Discord or check repo Issues.
+
+---
+
+## 🙌 Happy Swarming!
