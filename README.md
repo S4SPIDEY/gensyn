@@ -52,6 +52,7 @@ git fetch --all --tags
 git switch main
 git reset --hard origin/main
 git clean -fd
+git describe --tags
 ```
 
 ## 🌐 (VPS Users Only) – Enable Cloudflare Tunnel for Browser Access
