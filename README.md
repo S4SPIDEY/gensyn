@@ -12,7 +12,7 @@ Before starting, **remove previous setup** and **backup your existing key** (`sw
 ```bash
 cd ~
 cp rl-swarm/swarm.pem ~
-sudo rm -rf rl-swarm
+sudo rm -rf rl-swarm && sudo rm -rf .venv  
 ```
 
 ---
@@ -48,11 +48,8 @@ python3 -m venv .venv && source .venv/bin/activate && cd rl-swarm
 ```bash
 rm -rf .venv      # Optional: reset virtual environment
 cd rl-swarm
-git fetch --all --tags
-git switch main
-git reset --hard origin/main
-git clean -fd
-git describe --tags
+git fetch --all --tags && git switch main && git reset --hard origin/main && git clean -fd && git describe --tags 
+./run_rl_swarm.sh
 ```
 
 ## 🌐 (VPS Users Only) – Enable Cloudflare Tunnel for Browser Access
