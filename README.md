@@ -14,7 +14,11 @@ cd ~
 cp rl-swarm/swarm.pem ~
 sudo rm -rf rl-swarm && sudo rm -rf .venv  
 ```
-
+## Set up 16 Gb of Swap Memory(oneTime)
+```
+echo "setting up 16GB of swap Memory..."
+sudo fallocate -l 16G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab && echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-swappiness.conf && sudo sysctl --system
+```
 ---
 
 ## 🚀 One-Liner Setup for New Users
